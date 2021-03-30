@@ -1,2 +1,2 @@
-# Small-_JIE-Blog
-原创个人博客管理系统
+# Small_JIE_Blog
+杰杰の原创个人博客管理系统
