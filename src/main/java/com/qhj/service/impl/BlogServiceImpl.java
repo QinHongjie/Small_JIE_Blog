@@ -3,6 +3,7 @@ package com.qhj.service.impl;
 import com.qhj.dao.BlogRepository;
 import com.qhj.pojo.Blog;
 import com.qhj.pojo.Type;
+import com.qhj.pojo.User;
 import com.qhj.service.BlogService;
 import com.qhj.service.CommentService;
 import com.qhj.utils.MarkdownUtils;
@@ -16,6 +17,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,11 +50,15 @@ public class BlogServiceImpl implements BlogService {
         if (blog == null){
             return blog;
         }
+        Object context = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if ("anonymousUser".equals(context)) {
+            blogRepository.updateViews(id);
+        }
         Blog b = new Blog();
         BeanUtils.copyProperties(blog, b);
         String content = b.getContent();
         b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
-        blogRepository.updateViews(id);
+        b.setViews(b.getViews()+1);
         return b;
     }
 
