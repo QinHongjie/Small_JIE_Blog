@@ -23,7 +23,6 @@ public class Tag {
     @ManyToMany(mappedBy = "tags")
     private List<Blog> blogs = new ArrayList<>();
 
-
     public Tag() {
     }
 
