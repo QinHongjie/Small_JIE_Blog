@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head('博客管理 | 博客列表')"></head>
+<body>
+	<!-- 导航 -->
+	<nav th:replace="admin/_fragments :: nav(1)"></nav>
+
+	<div class="ui attached pointing menu">
+		<div class="m-container">
+			<div class="ui container">
+				<div class="left menu">
+					<a th:href="@{/admin/blog/input}" class="item">发布</a>
+					<a th:href="@{/admin/blogs}" class="item teal active">列表</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container">
+		<div class="ui container">
+			<!-- 条件搜索 -->
+			<div class="ui teal segment form">
+				<input type="hidden" name="page">
+				<div class="inline fields" style="margin: 0 !important;">
+					<div class="field">
+						<input name="title" type="text" placeholder="标题" />
+					</div>
+					<div class="field">
+						<div class="ui labeled action input">
+							<div class="ui type selection dropdown">
+								<input type="hidden" name="typeId" />
+								<i class="dropdown icon"></i>
+								<div class="default text">分类</div>
+								<div class="menu">
+									<div th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.name}"></div>
+								</div>
+							</div>
+							<button class="ui button compact clear">clear</button>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui checkbox">
+							<input name="recommend" id="recommend" type="checkbox" />
+							<label for="recommend">推荐</label>
+						</div>
+					</div>
+					<div class="field">
+						<button id="search-btn" type="button" class="ui teal basic button"><i class="search icon"></i>搜索</button>
+					</div>
+				</div>
+			</div>
+			<!-- 表格 -->
+			<div id="table-container">
+				<table th:fragment="blogList" class="ui compact teal table">
+					<thead>
+						<tr>
+							<th></th>
+							<th>标题</th>
+							<th>类型</th>
+							<th>推荐</th>
+							<th>状态</th>
+							<th>更新时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="blog, iterStat : ${page.content}">
+							<td th:text="${iterStat.count}">1</td>
+							<td th:text="${blog.title}">刻意练习清单</td>
+							<td th:text="${blog.type.name}">认知升级</td>
+							<td  th:text="${blog.recommend} ? '是' : '否'">是</td>
+							<td  th:text="${blog.published} ? '已发布' : '草稿'">草稿</td>
+							<td th:text="${blog.updateTime}">2021-03-23 20:20</td>
+							<td>
+								<a th:href="@{/admin/blog/edit/{id}(id=${blog.id})}" class="ui mini teal button basic">编辑</a>
+								<a href="javascript:;" th:attr="onclick='deleteBlog('+${blog.id}+')'" class="ui mini red button basic deleteBtn">删除</a>
+								<!-- th:href="@{/admin/blog/delete/{id}(id=${blog.id})}"  -->
+							</td>
+						</tr>
+					</tbody>
+
+					<div class="ui special modal tiny">
+						<h3 class="ui header">确认删除？</h3>
+						<div class="scrolling content">
+							<p>删除后将无法恢复,请谨慎操作!</p>
+						</div>
+						<div class="actions">
+							<div class="ui button teal basic deny">再想想</div>
+							<div class="ui button red basic approve">删除</div>
+						</div>
+					</div>
+
+					<tfoot>
+						<tr>
+							<th colspan="7">
+								<div class="ui mini left floated pagination menu">
+									<a onclick="page(this)" th:attr="data-page=${page.number}-1" th:classappend="${page.first} ? 'disabled'" class="ui icon item button mini">
+										<i class="left chevron icon"></i>上一页
+									</a>
+									<!-- <a class="item">1</a>
+									<a class="item">2</a>
+									<a class="item">3</a>
+									<a class="item">4</a> -->
+									<a onclick="page(this)" th:attr="data-page=${page.number}+1" th:classappend="${page.last} ? 'disabled'" class="ui icon item button mini">
+										下一页<i class="right chevron icon"></i>
+									</a>
+								</div>
+								<a th:href="@{/admin/blog/input}" class="ui mini right floated teal basic button">新增</a>
+							</th>
+						</tr>
+					</tfoot>
+				</table>
+
+				<!--消息提示-->
+				<div class="ui success large message m-message" th:unless="${#strings.isEmpty(message)}">
+					<i class="close icon"></i>
+					<div class="header" th:text="${message}">恭喜，操作成功！</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="admin/_fragments :: script"></th:block>
+</body>
+<script>
+	/* 搜索查询 */
+	$("#search-btn").click(function () {
+		$("[name='page']").val(0);
+		loaddata();
+	})
+
+	/* 分页查询 */
+	function page(obj) {
+		$("[name='page']").val($(obj).data("page"));
+		loaddata();
+	}
+
+	function loaddata() {
+		$("#table-container").load("/admin/blogs/search",{
+			title : $("[name='title']").val(),
+			typeId : $("[name='typeId']").val(),
+			recommend : $("[name='recommend']").prop('checked'),
+			page : $("[name='page']").val()
+		});
+	}
+
+	/* 关闭提示 */
+	$('.message .close').on('click',function () {
+		$('.message .close').closest('.message').transition('fade');
+	});
+	/* 自动关闭提示 */
+	setTimeout(function () {
+		$('.message .close').closest('.message').transition('fade');
+	},2000)
+
+	/* 清除分类选项 */
+	$(".clear.button").on('click', function () {
+		$(".ui.type.dropdown").dropdown("clear");
+	})
+
+	/* 确认删除博客弹窗 */
+	// $('.special.modal').modal('attach events', '.deleteBtn', 'show');
+	function deleteBlog(id){
+		$('.special.modal').modal({
+			centered  : false,
+			onDeny    : function(){
+				// 否
+				$(this).hide()
+			},
+			onApprove : function() {
+				// 确定
+				window.location.href= "/admin/blog/delete/" + id;
+			}
+		}).modal('show');
+	}
+
+
+
+</script>
+</html>

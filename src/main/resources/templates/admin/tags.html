@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head('博客管理 | 标签管理')"></head>
+<body>
+	<!-- 导航 -->
+	<nav th:replace="admin/_fragments :: nav(3)"></nav>
+
+	<div class="ui attached pointing menu">
+		<div class="m-container">
+			<div class="ui container">
+				<div class="left menu">
+					<a th:href="@{/admin/tag/input}" class="item">发布</a>
+					<a th:href="@{/admin/tags}" class="item teal active">列表</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container">
+		<div class="ui container">
+			<!--消息提示-->
+			<div class="ui success large message m-message" th:unless="${#strings.isEmpty(message)}" >
+				<i class="close icon"></i>
+				<div class="header" th:text="${message}">恭喜，操作成功！</div>
+			</div>
+			<!-- 表格 -->
+			<table class="ui table compact teal">
+				<thead>
+					<tr>
+						<th></th>
+						<th>名称</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="tag,iterStat : ${page.content}">
+						<td th:text="${iterStat.count}"></td>
+						<td th:text="${tag.name}"></td>
+						<td>
+							<a th:href="@{/admin/tag/{id}/edit(id=${tag.id})}" class="ui mini teal button basic">编辑</a>
+							<a th:href="@{/admin/tag/{id}/delete(id=${tag.id})}" class="ui mini red button basic">删除</a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="6">
+							<div class="ui mini left floated pagination menu">
+								<a th:href="@{/admin/tags(page=${page.number}-1)}" th:classappend="${page.first} ? 'disabled'" class="ui icon item button mini">
+									<i class="left chevron icon"></i>上一页
+								</a>
+								<!-- <a class="item">1</a>
+								<a class="item">2</a>
+								<a class="item">3</a>
+								<a class="item">4</a> -->
+								<a th:href="@{/admin/tags(page=${page.number}+1)}" th:classappend="${page.last} ? 'disabled'" class="ui icon item button mini">
+									下一页<i class="right chevron icon"></i>
+								</a>
+							</div>
+							<a th:href="@{/admin/tag/input}" class="ui mini right floated teal basic button">新增</a>
+						</th>
+					</tr>
+				</tfoot>
+			</table>
+
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="admin/_fragments :: script"></th:block>
+</body>
+<script>
+	/* 关闭提示 */
+	$('.message .close').on('click',function () {
+		$('.message .close').closest('.message').transition('fade');
+	});
+	/* 自动关闭提示 */
+	setTimeout(function () {
+		$('.message .close').closest('.message').transition('fade');
+	},2000)
+
+
+
+</script>
+</html>

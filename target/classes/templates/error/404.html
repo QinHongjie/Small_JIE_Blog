@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head('博客 | 404')"></head>
+<body>
+	<!--导航-->
+	<nav th:replace="_fragments :: user_nav(0)"></nav>
+
+	<!-- content -->
+	<div class="m-container-small m-padded-tb-massive">
+		<div class="ui error message">
+			<div class="ui container">
+				<h2>404</h2>
+				<p>对不起，您访问的资源不存在！</p>
+				<p><span class="time" style="color:red;">3</span> 秒后自动跳转至主页。</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="_fragments :: script"></th:block>
+	<script>
+		$(function(){
+			var index = 3;
+			var time = setInterval(function(){
+				index--;
+				$(".time").text(index);
+				if(index==0){
+					clearInterval(time)
+					location.href = "/";
+				}
+			},1000);
+		})
+	</script>
+</body>
+</html>

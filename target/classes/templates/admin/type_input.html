@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head('博客管理 | 分类新增')"></head>
+<body>
+	<!-- 导航 -->
+	<nav th:replace="admin/_fragments :: nav(2)"></nav>
+
+	<div class="ui attached pointing menu">
+		<div class="m-container">
+			<div class="ui container">
+				<div class="left menu">
+					<a th:href="@{/admin/type/input}" class="item teal active">发布</a>
+					<a th:href="@{/admin/types}" class="item">列表</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container-small">
+		<div class="ui container">
+			<!-- content -->
+			<form method="post" class="ui form" th:object="${type}" th:action="*{id}==null ? @{/admin/type/input} : @{/admin/type/input/{id}(id=*{id})}">
+				<input type="hidden" name="id" th:value="*{id}">
+				<!-- 标题 -->
+				<div class="required field">
+					<div class="ui left labeled input">
+						<label class="ui teal basic label">名称</label>
+						<input name="name" type="text" placeholder="分类名称" th:value="*{name}" autofocus />
+					</div>
+				</div>
+				<!-- error -->
+				<div class="ui error message"></div>
+				<!--/*/
+				<div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+					<i class="close icon"></i>
+					<div class="header">验证失败</div>
+					<p th:errors="*{name}">提交信息不符合规则</p>
+				</div>
+				/*/-->
+				<!-- 功能按钮 -->
+				<div class="ui right aligned container">
+					<button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+					<button class="ui teal button submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="admin/_fragments :: script"></th:block>
+</body>
+<script>
+	/* 表单验证 */
+	$('.ui.form').form({
+		fields : {
+			name: {
+				identifier: 'name',
+				rules: [{
+					type: 'empty',
+					prompt: '请输入分类名称'
+				}]
+			}
+		}
+	});
+
+	/* 关闭提示 */
+	$('.message .close').on('click',function () {
+		$('.message .close').closest('.message').transition('fade');
+	});
+	/* 自动关闭提示 */
+	setTimeout(function () {
+		$('.message .close').closest('.message').transition('fade');
+	},3000)
+</script>
+</html>

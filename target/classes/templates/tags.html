@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- css -->
+	<th:block th:insert="_fragments :: head"></th:block>
+	<title th:text="|#{blog.name} - 标签|"></title>
+	<style>
+		body {
+			background: url("https://unsplash.it/800/450?image=139") no-repeat fixed;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<!--导航-->
+	<nav th:replace="_fragments :: user_nav(3)"></nav>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container-small m-opacity-all">
+		<div class="ui container">
+			<!-- header -->
+			<div class="ui top attached segment">
+				<div class="ui middle aligned two column grid">
+					<div class="column">
+						<h3 class="ui teal header">标签</h3>
+					</div>
+					<div class="right aligned column">
+						共 <h2 class="ui orange header m-inline-blok m-text-thin" th:text="${#arrays.length(tags)}">14</h2> 个
+					</div>
+				</div>
+			</div>
+			<!-- 标签 -->
+			<div class="ui attached segment m-padded-tb-large" >
+				<a th:href="@{/tags/{id}(id=${tag.id})}" class="ui tag label m-margin-tb-tiny" th:classappend="${tag.id==activeTagId}?'teal'" th:each="tag : ${tags}" style="margin-right: 1em;">
+					<span th:text="${tag.name}">方法论</span>
+					<div class="detail" th:text="${#arrays.length(tag.blogs)}">14</div>
+				</a>
+			</div>
+			<!-- 文章列表 -->
+			<div class="ui top attached teal segment">
+				<!-- 文章模块 -->
+				<div class="ui padded vertical segment m-padded-tb-large animated flipInX" th:each="blog : ${page.content}">
+					<div class="ui middle aligned mobile reversed stackable grid m-padded-lr-big">
+						<div class="eleven wide column">
+							<h3 class="ui header"><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}" class="m-black">博客标题：</a></h3>
+							<p class="m-text m-margin-bottom-small m-padded-tb-small" th:text="|${blog.description}......|">博客内容。</p>
+							<div class="ui grid">
+								<div class="row">
+									<div class="eleven wide column">
+										<div class="ui mini horizontal link list">
+											<div class="item">
+												<!-- src="https://unsplash.it/100/100?image=1005" -->
+												<img th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image" />
+												<div class="content">
+													<a th:href="@{/about}" class="header" th:text="@{${blog.user.nickname}}">李二狗</a>
+												</div>
+											</div>
+											<div class="item">
+												<i class="calendar icon"></i>
+												<span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}" class="m-text-year-view">2021-03-23</span>
+											</div>
+											<div class="item">
+												<i class="eye icon"></i>
+												<span th:text="${blog.views}" class="m-text-year-view">2020</span>
+											</div>
+										</div>
+									</div>
+									<div class="right aligned five wide column">
+										<a th:href="@{/types/{id}(id=${blog.type.id})}" target="_blank" class="ui teal basic label m-padded-tiny m-opacity-mini" th:text="${blog.type.name}">认知升级</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="column">
+										<a th:href="@{/tags/{id}(id=${tag.id})}" class="ui basic left pointing label m-padded-mini" th:classappend="${tag.id==activeTagId}?'teal'" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="five wide column">
+							<a th:href="@{/blog/{id}(id=${blog.id})}">
+								<img alt="" class="ui rounded image" th:src="@{${blog.firstPicture}}" />
+							</a>
+						</div>
+					</div>
+				</div><!--文章模块end-->
+			</div>
+
+			<!-- bottom -->
+			<div class="ui bttom attached segment">
+				<div class="ui middle aligned two column grid">
+					<div class="column">
+						<a th:href="@{/tags/{id}(id=${activeTagId},page=${page.number}-1)}" th:classappend="${page.first} ? 'disabled'" class="ui icon button teal basic toPost">
+							<i class="left chevron icon"></i>上一页
+						</a>
+					</div>
+					<div class="right aligned column">
+						<a th:href="@{/tags/{id}(id=${activeTagId},page=${page.number}+1)}" th:classappend="${page.last} ? 'disabled'" class="ui icon button teal basic toPost" >
+							下一页<i class="right chevron icon"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- -------- 侧边置顶导航工具栏 ------- -->
+	<div id="toolbar" class="m-margin m-fixed m-right-bottom">
+		<div class="ui vertical icon buttons">
+			<button id="toTop-button" class="ui teal icon button"><i class="chevron up icon"></i></button>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="_fragments :: script"></th:block>
+</body>
+<script>
+
+</script>
+</html>

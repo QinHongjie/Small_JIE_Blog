@@ -1,0 +1,18 @@
+#生产环境
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root3306
+  jpa:
+    hibernate:
+      ddl-auto: none #根据实体类刷新数据库 慎用！ 打开：update 关闭：none
+    show-sql: true #使sql语句在控制台输出
+
+logging:
+  level:
+    root: warn #日志输出级别
+    com.qhj: info #自定义日志级别
+  file:
+    path: log/blog-pro.log #日志生成路径

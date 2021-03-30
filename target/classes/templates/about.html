@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- css -->
+	<th:block th:insert="_fragments :: head"></th:block>
+	<title th:text="|#{blog.name} - 关于我|"></title>
+	<style>
+		body {
+			background: url("https://unsplash.it/800/450?image=103") no-repeat fixed;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<!--导航-->
+	<nav th:replace="_fragments :: user_nav(5)"></nav>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container m-opacity-all">
+		<div class="container">
+			<!-- content -->
+			<div class="ui grid stackable">
+				<!-- 左边图片 -->
+				<div class="eleven wide column">
+					<div class="ui segment">
+						<img src="https://unsplash.it/800/600?image=1005" alt="" class="ui rounded image" />
+					</div>
+				</div>
+				<!-- 右边 -->
+				<div class="five wide column">
+					<div class="ui top attached segment">
+						<div class="ui header">关于我</div>
+					</div>
+					<div class="ui attached segment">
+						<p class="m-text">一个在编程路上艰难前行的好学小boy，一个终身学习者，誓将学习无限循环，希望可以结识共同成长的小伙伴！</p>
+						<p class="m-text">热爱编程，能够折腾，喜欢安静，正在探索高效的学习编程技术方法...</p>
+					</div>
+					<div class="ui attached segment">
+						<div class="ui orange basic left pointing label m-margin-tb-tiny">编程</div>
+						<div class="ui orange basic left pointing label m-margin-tb-tiny">写作</div>
+						<div class="ui orange basic left pointing label m-margin-tb-tiny">思考</div>
+						<div class="ui orange basic left pointing label m-margin-tb-tiny">运动</div>
+					</div>
+					<div class="ui attached segment">
+						<div class="ui orange basic label m-margin-tb-tiny">Java</div>
+						<div class="ui orange basic label m-margin-tb-tiny">HTML+CSS</div>
+						<div class="ui orange basic label m-margin-tb-tiny">JavaScript</div>
+						<div class="ui orange basic label m-margin-tb-tiny">SSM</div>
+						<div class="ui orange basic label m-margin-tb-tiny">SpringBoot</div>
+						<div class="ui orange basic label m-margin-tb-tiny">MySQL</div>
+						<div class="ui orange basic label m-margin-tb-tiny">Semantic UI</div>
+						<div class="ui orange basic label m-margin-tb-tiny">...</div>
+					</div>
+					<div class="ui attached segment bttom">
+						<a href="https://github.com/QinHongjie/fastadmin-doc" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>
+						<a href="javascript:;" class="ui circular icon button wechat"><i class="weixin icon"></i></a>
+						<a href="javascript:;" class="ui circular icon button qq" th:data-content="#{index.qq}" data-position="bottom center"><i class="qq icon"></i></a>
+					</div>
+					<!-- 隐藏二维码 -->
+					<div class="ui wechat-qr flowing popup transition hidden">
+						<img th:src="@{/img/wx_qr.png}" alt="" class="ui image rounded image" width="120px"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- -------- 侧边置顶导航工具栏 ------- -->
+	<div id="toolbar" class="m-margin m-fixed m-right-bottom">
+		<div class="ui vertical icon buttons">
+			<button id="toTop-button" class="ui teal icon button"><i class="chevron up icon"></i></button>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="_fragments :: script"></th:block>
+</body>
+<script>
+
+	$('.qq').popup();
+
+
+	$('.wechat').popup({
+		popup: $('.wechat-qr'),
+		position: 'top center',
+	});
+</script>
+</html>

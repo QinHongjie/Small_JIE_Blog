@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:fragment="head">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link th:href="@{/img/head_icon.png}" rel="icon" type="image/x-ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"><!-- ui框架 -->
+        <link rel="stylesheet" th:href="@{/css/animate.min.css}" /><!-- 动画 -->
+        <link rel="stylesheet" th:href="@{/css/typo.css}" /><!-- 内容排版 -->
+        <link rel="stylesheet" th:href="@{/lib/prism/prism.css}" /><!-- 代码高亮 -->
+        <link rel="stylesheet" th:href="@{/lib/tocbot/tocbot.css}" /><!-- 生成目录 -->
+        <link rel="stylesheet" th:href="@{/css/me.css}" /><!-- 自定义 -->
+    </th:block>
+</head>
+<body>
+
+<!-- 前端导航 -->
+<nav th:fragment="user_nav(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small m-opacity-all">
+    <!-- 导航标签 -->
+    <div class="ui container">
+        <div class="ui inverted secondary menu stackable">
+            <h2 class="ui teal header item animated bounce infinite" style="font-family: 楷体;"><a th:href="@{/}" class="m-teal">小杰のBlog</a></h2>
+            <a th:href="@{/index}" class="item m-item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>首页</a>
+            <a th:href="@{/types}" class="item m-item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
+            <a th:href="@{/tags}" class="item m-item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
+            <a th:href="@{/archives}" class="item m-item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>归档</a>
+            <a th:href="@{/about}" class="item m-item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini info icon"></i>关于我</a>
+            <div class="right item m-item m-mobile-hide">
+                <form th:action="@{/search}" method="post" name="search">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" name="query" placeholder="搜索..." th:value="${query}" autocomplete="off"/>
+                        <i onclick="document.forms['search'].submit()" class="search link icon animated pulse infinite"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black iocn button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!-- 底部footer -->
+<footer th:fragment="footer" id="footer" class="ui inverted vertical segment m-footer m-opacity-all">
+    <div class="ui center aligned container">
+        <!-- 分隔列表 -->
+        <div class="ui inverted divided grid stackable mobile reversed">
+            <div class="ui three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img th:src="@{/img/wx_qr.png}" class="ui rounded image" alt="" style="width: 120px;" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                <div id="newblog-container">
+                    <div class="ui inverted link list" th:fragment="newBlogList">
+                        <a class="ui item m-margin-bottom-small" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:each="blog : ${newBlogs}" th:text="${blog.title}">用户故事</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a class="ui item" href="#" th:text="|Email:#{index.email}|">Email</a>
+                    <a class="ui item" href="#" th:text="|QQ:#{index.qq}|">QQ</a>
+                </div>
+            </div>
+            <div class="ui seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">小杰的Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">
+                    这是我的个人原创博客网站，欢迎来踩吖...<br>
+                    我将会在本站不定时更新一些学习笔记，以及其他资源，并会持续维护此博客，希望有兴趣的小伙伴多多关注，多一些技术交流，共同成长，共同进步！
+                </p>
+
+            </div>
+        </div>
+        <!-- 最底层分割线 -->
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright &copy; The author was Qin Hongjie</p>
+    </div>
+    <img onclick='L2Dclear()' id='l2d-clear' th:src='@{/img/Ld_clear.png}' style="display: none;">
+</footer>
+
+
+<!-- javaScript引用 -->
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.3/jquery.scrollTo.min.js"></script>
+    <script th:src="@{/lib/prism/prism.js}"></script><!-- 代码高亮 -->
+    <script th:src="@{/lib/tocbot/tocbot.min.js}"></script><!-- 目录生成工具 -->
+    <script th:src="@{/lib/qrcode/qrcode.min.js}"></script><!-- 二维码生成工具 -->
+    <!--<script th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>--> <!-- 滚动监听 -->
+    <!--Live-2D看板娘模型-->
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script th:src="@{/js/me.js}"></script><!-- 自定义js -->
+    <script th:inline="javascript">
+        $("#newblog-container").load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
+
+</th:block>
+
+
+</body>
+</html>

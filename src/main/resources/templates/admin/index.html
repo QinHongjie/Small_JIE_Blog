@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head('博客管理 | 欢迎')"></head>
+<body>
+	<!-- 导航 -->
+	<nav th:replace="admin/_fragments :: nav(0)"></nav>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container">
+		<div class="ui container">
+			<div class="ui success large message">
+				<h2>Hi!</h2>
+				<p>秦洪杰，欢迎登录！</p>
+			</div>
+			<div class="ui container">
+				<img th:src="@{/img/head_portrait.jpg}" alt="" class="ui rounded bordered fluid image">
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="admin/_fragments :: script"></th:block>
+</body>
+<script>
+</script>
+</html>

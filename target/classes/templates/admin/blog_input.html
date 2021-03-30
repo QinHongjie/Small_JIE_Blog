@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head('博客管理 | 发布文章')"></head>
+<body>
+	<!-- 导航 -->
+	<nav th:replace="admin/_fragments :: nav(1)"></nav>
+
+	<div class="ui attached pointing menu">
+		<div class="m-container">
+			<div class="ui container">
+				<div class="left menu">
+					<a th:href="@{/admin/blog/input}" class="item teal active">发布</a>
+					<a th:href="@{/admin/blogs}" class="item">列表</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 中间件 -->
+	<div class="m-padded-tb-big m-container">
+		<div class="ui container">
+			<!-- -------------- form ------------------ -->
+			<form id="blog-form" th:object="${blog}" th:action="@{/admin/blog/input}" method="post" class="ui form">
+				<input type="hidden" name="published">
+				<input type="hidden" name="id" th:value="*{id}">
+				<!-- 标题 -->
+				<div class="required field">
+					<div class="ui left labeled input">
+						<div class="ui selection compact teal basic label dropdown">
+							<input type="hidden" name="flag" th:value="*{flag}"/>
+							<i class="dropdown icon"></i>
+							<div class="default text">创作类型</div>
+							<div class="menu">
+								<div class="item" data-value="原创">原创</div>
+								<div class="item" data-value="转载">转载</div>
+								<div class="item" data-value="翻译">翻译</div>
+							</div>
+						</div>
+						<input name="title" type="text" placeholder="标题" th:value="*{title}" />
+					</div>
+				</div>
+				<!-- 内容 -->
+				<div class="required field">
+					<div id="md-content" style="z-index: 5 !important;">
+						<textarea name="content" style="display: none;" th:text="*{content}"></textarea>
+					</div>
+				</div>
+				<div class="two fields">
+					<!-- 分类 -->
+					<div class="required field">
+						<div class="ui left labeled action input">
+							<label class="ui compact teal basic label">分类</label>
+							<div class="ui fluid selection dropdown">
+								<input type="hidden" name="type.id"  th:value="*{type}!=null ? *{type.id}"/>
+								<i class="dropdown icon"></i>
+								<div class="default text">分类</div>
+								<div class="menu">
+									<div th:each="type : ${types}" class="item" th:data-value="${type.id}" th:text="${type.name}"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 标签 -->
+					<div class="field">
+						<div class="ui left labeled action input">
+							<label class="ui compact teal basic label">标签</label>
+							<div class="ui tag fluid selection dropdown multiple search">
+								<input type="hidden" name="tagIds"  th:value="*{tagIds}"/>
+								<i class="dropdown icon"></i>
+								<div class="default text">标签</div>
+								<div class="menu">
+									<div th:each="tag : ${tags}" class="item" th:data-value="${tag.id}" th:text="${tag.name}"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 首图引用 -->
+				<div class="required field">
+					<div class="ui left labeled input">
+						<label class="ui teal basic label">首图</label>
+						<input type="text" name="firstPicture" placeholder="首图引用地址" th:value="*{firstPicture}"/>
+						<label id="portrait-btn" class="ui label">默认</label>
+					</div>
+				</div>
+				<!-- 功能开关 -->
+				<div class="inline fields">
+					<div class="field">
+						<div class="ui checkbox">
+							<input name="recommend" id="recommend" type="checkbox" class="hidden" th:checked="*{recommend}" />
+							<label for="recommend">推荐</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui checkbox">
+							<input name="shareStatement" id="shareStatement" type="checkbox" class="hidden" th:checked="*{shareStatement}" />
+							<label for="shareStatement">转载声明</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui checkbox">
+							<input name="appreciation" id="appreciation" type="checkbox" class="hidden" checked th:checked="*{appreciation}" />
+							<label for="appreciation">赞赏</label>
+						</div>
+					</div>
+					<div class="field">
+						<div class="ui checkbox">
+							<input name="commentabled" id="commentabled" type="checkbox" class="hidden" checked th:checked="*{commentabled}" />
+							<label for="commentabled">评论</label>
+						</div>
+					</div>
+				</div>
+				<!-- 功能按钮 -->
+				<div class="ui right aligned container">
+					<button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+					<button type="button" class="ui secondary button" id="save-btn">存为草稿</button>
+					<button type="button" class="ui teal button" id="publish-btn">发布</button>
+				</div>
+				<!-- error -->
+				 <div class="ui error message m-message-error"></div>
+			</form>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer"></footer>
+	<!-- script -->
+	<th:block th:replace="admin/_fragments :: script"></th:block>
+</body>
+<script>
+	/* 富文本编辑器 */
+	var contentEditor;
+	$(function() {
+		contentEditor = editormd("md-content", {
+			placeholder:'本编辑器支持Markdown编辑，左边编写，右边预览',
+			width   : "100%",
+			height  : 640,
+			syncScrolling : "single",
+			path    : "/lib/editormd/lib/"
+		});
+	});
+
+	/* 表单验证 */
+	$('.ui.form').form({
+		fields : {
+			flag : {
+				identifier: 'flag',
+				rules: [{
+					type : 'empty',
+					prompt : '类型：请选择创作类型'
+				}]
+			},
+			title : {
+				identifier: 'title',
+				rules: [{
+					type : 'empty',
+					prompt : '标题：请输入博客标题'
+				}]
+			},
+			content : {
+				identifier: 'content',
+				rules: [{
+					type : 'empty',
+					prompt : '内容：请输入博客内容'
+				}]
+			},
+			typeId : {
+				identifier: 'type.id',
+				rules: [{
+					type : 'empty',
+					prompt : '分类：请选择文章分类'
+				}]
+			},
+			firstPicture : {
+				identifier: 'firstPicture',
+				rules: [{
+					type : 'empty',
+					prompt : '首图：请添加首图'
+				}]
+			}
+		}
+	});
+
+	/*保存*/
+	$('#save-btn').click(function () {
+		$("[name='published']").val(false);
+		$("#blog-form").submit();
+	})
+	/*发布*/
+	$('#publish-btn').click(function () {
+		$("[name='published']").val(true);
+		$("#blog-form").submit();
+	})
+
+
+	/* 选择默认头图 */
+	$("#portrait-btn").click(function () {
+		$("input[name='firstPicture']").val("https://unsplash.it/800/450?image=1022");
+	})
+
+
+
+
+
+	/* 输入并添加新标签 */
+	// $(".ui.tag.dropdown").dropdwn({
+	// 	allowAdditions: true
+	// });
+
+</script>
+</html>
