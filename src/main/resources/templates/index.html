@@ -9,6 +9,9 @@
 			background: url("/img/bg/bg_index.jpg") no-repeat fixed;
 			background-size: 100% 100%;
 		}
+		#tagsYun {position:relative;left:-30%; width: 150%; height:300px; margin: 0 auto;}
+		#tagsYun a {position:absolute; top:0px; left:0px; color:#fff; font-weight:bold; text-decoration:none; padding: 3px 6px; }
+		#tagsYun a:hover {border: 1px solid #eee; background: #000; }
 	</style>
 </head>
 <body>
@@ -152,21 +155,21 @@
 						</div>
 					</div>
 					<!-- 标签 -->
-					<div class="ui segments m-margin-top-small">
+					<div class="ui segments m-margin-top-small" style="overflow: hidden;">
 						<div class="ui secondary segment">
 							<div class="ui two column grid">
 								<div class="column">
-									<i class="tags icon"></i>标签
+									<i class="tags icon"></i>标签云
 								</div>
 								<div class="right aligned column">
 									<a th:href="@{/tags}">更多<i class="angle double right icon"></i></a>
 								</div>
 							</div>
 						</div>
-						<div class="ui teal segment">
+						<div id="tagsYun" class="ui teal segment">
 							<a th:href="@{/tags/{id}(id=${tag.id})}" class="ui teal tag label m-margin-tb-tiny" th:each="tag : ${tags}">
-								<span th:text="${tag.name}">方法论</span>
-								<div class="detail" th:text="${#arrays.length(tag.blogs)}">14</div>
+								<span th:text="${tag.name}" style="margin-left:0.6em;">方法论</span>
+								<div class="detail" th:text="${#arrays.length(tag.blogs)}" style="margin-left: 0.2em;">14</div>
 							</a>
 						</div>
 					</div>
@@ -199,6 +202,7 @@
 	<!-- 底部footer -->
 	<footer th:replace="_fragments :: footer"></footer>
 	<!-- script -->
+	<script th:src="@{/js/miaov.js}"></script><!--标签云特效-->
 	<th:block th:replace="_fragments :: script"></th:block>
 </body>
 </html>

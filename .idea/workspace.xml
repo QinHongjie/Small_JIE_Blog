@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a3ff41f-c155-4d7b-a8a5-c7cad22a6bce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/miaov.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/blog-dev.log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/blog-dev.log/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/archives.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/blog-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_fragments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.qhj.BlogApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.qhj.BlogApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.qhj.BlogApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.qhj.BlogApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +97,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img/bg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -114,11 +116,11 @@
       <recent name="com.qhj.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\idea_workspace\Springboot_Project\blog\src\main\resources\static\js" />
       <recent name="E:\idea_workspace\Springboot_Project\blog\src\main\resources\static\img\bg" />
       <recent name="E:\idea_workspace\Springboot_Project\blog\src\main\java\com\qhj" />
       <recent name="E:\idea_workspace\Springboot_Project\blog\src\main\resources\static\img" />
       <recent name="E:\idea_workspace\Springboot_Project\blog\src\main\resources\templates" />
-      <recent name="E:\idea_workspace\Springboot_Project\blog\src\main\resources\templates\admin" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BlogApplication">
@@ -223,7 +225,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616568646418</updated>
-      <workItem from="1616568650614" duration="301185000" />
+      <workItem from="1616568650614" duration="303264000" />
     </task>
     <task id="LOCAL-00001" summary="修改git到项目，idea测试提交">
       <created>1617119067369</created>
@@ -253,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617129596852</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="背景图路径修改">
+      <created>1617130522012</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617130522012</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +314,8 @@
     <MESSAGE value="修改git到项目，idea测试提交" />
     <MESSAGE value="idea提交项目" />
     <MESSAGE value="新增背景图" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增背景图" />
+    <MESSAGE value="背景图路径修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="背景图路径修改" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Assign_Data_Sources" timestamp="1617101599279">
@@ -328,10 +338,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617040963544" />
-    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1617130381443">
+    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1617130512820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381443" />
+    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130512820" />
     <state x="139" y="75" width="1228" height="685" key="DiffContextDialog" timestamp="1617119639586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -340,38 +350,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="528" y="113" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617007930235" />
-    <state width="1493" height="215" key="GridCell.Tab.0.bottom" timestamp="1617130381615">
+    <state width="1487" height="215" key="GridCell.Tab.0.bottom" timestamp="1617164242554">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381615" />
-    <state width="1493" height="215" key="GridCell.Tab.0.center" timestamp="1617130381603">
+    <state width="1487" height="215" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242554" />
+    <state width="1487" height="215" key="GridCell.Tab.0.center" timestamp="1617164242549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381603" />
-    <state width="1493" height="215" key="GridCell.Tab.0.left" timestamp="1617130381600">
+    <state width="1487" height="215" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242549" />
+    <state width="1487" height="215" key="GridCell.Tab.0.left" timestamp="1617164242547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381600" />
-    <state width="1493" height="215" key="GridCell.Tab.0.right" timestamp="1617130381608">
+    <state width="1487" height="215" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242547" />
+    <state width="1487" height="215" key="GridCell.Tab.0.right" timestamp="1617164242552">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381608" />
-    <state width="1493" height="215" key="GridCell.Tab.1.bottom" timestamp="1617130381632">
+    <state width="1487" height="215" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242552" />
+    <state width="1487" height="215" key="GridCell.Tab.1.bottom" timestamp="1617164242556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381632" />
-    <state width="1493" height="215" key="GridCell.Tab.1.center" timestamp="1617130381619">
+    <state width="1487" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242556" />
+    <state width="1487" height="215" key="GridCell.Tab.1.center" timestamp="1617164242555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381619" />
-    <state width="1493" height="215" key="GridCell.Tab.1.left" timestamp="1617130381617">
+    <state width="1487" height="215" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242555" />
+    <state width="1487" height="215" key="GridCell.Tab.1.left" timestamp="1617164242555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381617" />
-    <state width="1493" height="215" key="GridCell.Tab.1.right" timestamp="1617130381629">
+    <state width="1487" height="215" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242555" />
+    <state width="1487" height="215" key="GridCell.Tab.1.right" timestamp="1617164242555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617130381629" />
+    <state width="1487" height="215" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1280.680@0.0.1536.824" timestamp="1617164242555" />
     <state width="1493" height="293" key="GridCell.Tab.2.bottom" timestamp="1616859923616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1255,3 +1255,287 @@ Unconditional classes:
 2021-03-31 02:53:55.054  INFO 47040 --- [http-nio-8080-exec-8] com.qhj.aspect.LogAspect                 : Result : about
 2021-03-31 02:53:58.116  INFO 47040 --- [http-nio-8080-exec-1] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
 2021-03-31 02:53:58.135  INFO 47040 --- [http-nio-8080-exec-1] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 02:58:12.252  INFO 47040 --- [Thread-46] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-31 02:58:12.266  INFO 47040 --- [Thread-46] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 02:58:12.290  INFO 47040 --- [Thread-46] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-31 02:58:12.339  INFO 47040 --- [Thread-46] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-31 02:59:32.842  INFO 47040 --- [restartedMain] com.qhj.BlogApplication                  : Starting BlogApplication using Java 1.8.0_131 on QINHONGJIE with PID 47040 (E:\idea_workspace\Springboot_Project\blog\target\classes started by 秦红杰 in E:\idea_workspace\Springboot_Project\blog)
+2021-03-31 02:59:32.843 DEBUG 47040 --- [restartedMain] com.qhj.BlogApplication                  : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-31 02:59:32.843  INFO 47040 --- [restartedMain] com.qhj.BlogApplication                  : The following profiles are active: dev
+2021-03-31 02:59:34.207  INFO 47040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 02:59:34.210  INFO 47040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2021-03-31 02:59:35.866  INFO 47040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-31 02:59:35.871  INFO 47040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-31 02:59:35.874  INFO 47040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-31 02:59:35.878  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-31 02:59:35.881  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-31 02:59:35.882  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-31 02:59:35.883  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-31 02:59:36.209  INFO 47040 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-03-31 02:59:36.210  INFO 47040 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3359 ms
+2021-03-31 02:59:36.452  INFO 47040 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 02:59:36.497  INFO 47040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-03-31 02:59:36.497  WARN 47040 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-31 02:59:36.517  INFO 47040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-03-31 02:59:36.518  INFO 47040 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-03-31 02:59:36.589  INFO 47040 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-31 02:59:36.590  INFO 47040 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 02:59:36.627  INFO 47040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-31 02:59:36.753  WARN 47040 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-31 02:59:37.046  INFO 47040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-31 02:59:37.127  INFO 47040 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-31 02:59:37.438  INFO 47040 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6b956d56-4f4f-4952-bd01-3ad45368f310
+
+2021-03-31 02:59:37.580  INFO 47040 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2370196c, org.springframework.security.web.context.SecurityContextPersistenceFilter@39f5b3fb, org.springframework.security.web.header.HeaderWriterFilter@680abb88, org.springframework.security.web.csrf.CsrfFilter@aa64bbb, org.springframework.security.web.authentication.logout.LogoutFilter@4d58f85b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2c7b7e0a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4ea61eb4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@358360bc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@241ad456, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a6f3246, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47841078, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@427fc328, org.springframework.security.web.session.SessionManagementFilter@50c9dea1, org.springframework.security.web.access.ExceptionTranslationFilter@7e27bfdc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33a4a826]
+2021-03-31 02:59:37.695  INFO 47040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-31 02:59:37.727  INFO 47040 --- [restartedMain] com.qhj.BlogApplication                  : Started BlogApplication in 5.093 seconds (JVM running for 968.414)
+2021-03-31 02:59:37.740  INFO 47040 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration#inMemoryUserDetailsManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.security.oauth2.client.registration.ClientRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-03-31 02:59:54.619  INFO 47040 --- [Thread-78] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-31 02:59:54.622  INFO 47040 --- [Thread-78] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 02:59:54.628  INFO 47040 --- [Thread-78] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-03-31 02:59:54.643  INFO 47040 --- [Thread-78] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-03-31 02:59:55.594  INFO 47040 --- [restartedMain] com.qhj.BlogApplication                  : Starting BlogApplication using Java 1.8.0_131 on QINHONGJIE with PID 47040 (E:\idea_workspace\Springboot_Project\blog\target\classes started by 秦红杰 in E:\idea_workspace\Springboot_Project\blog)
+2021-03-31 02:59:55.595 DEBUG 47040 --- [restartedMain] com.qhj.BlogApplication                  : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-31 02:59:55.595  INFO 47040 --- [restartedMain] com.qhj.BlogApplication                  : The following profiles are active: dev
+2021-03-31 02:59:56.425  INFO 47040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 02:59:56.560  INFO 47040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 5 JPA repository interfaces.
+2021-03-31 02:59:57.376  INFO 47040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-31 02:59:57.379  INFO 47040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-31 02:59:57.379  INFO 47040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-31 02:59:57.380  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-31 02:59:57.380  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-31 02:59:57.381  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-31 02:59:57.382  INFO 47040 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-31 02:59:57.612  INFO 47040 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-03-31 02:59:57.612  INFO 47040 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2009 ms
+2021-03-31 02:59:58.004  INFO 47040 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 02:59:58.018  INFO 47040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-03-31 02:59:58.019  WARN 47040 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-31 02:59:58.036  INFO 47040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-03-31 02:59:58.037  INFO 47040 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-03-31 02:59:58.517  INFO 47040 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-31 02:59:58.517  INFO 47040 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 02:59:58.704  INFO 47040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-31 03:00:00.235  WARN 47040 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-31 03:00:02.361  INFO 47040 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54a10c0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d21a6d4, org.springframework.security.web.header.HeaderWriterFilter@7a23dac2, org.springframework.web.filter.CharacterEncodingFilter@d3d4d75, org.springframework.security.web.authentication.logout.LogoutFilter@560dc712, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@311d5843, org.springframework.security.web.session.ConcurrentSessionFilter@4af3076e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b93e4e1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79308a78, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1490739a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19ddca6, org.springframework.security.web.session.SessionManagementFilter@7bd2c3ff, org.springframework.security.web.access.ExceptionTranslationFilter@282fe549, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5bcafcc8]
+2021-03-31 03:00:03.647  INFO 47040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-31 03:00:04.027  INFO 47040 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-31 03:00:05.264  INFO 47040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-31 03:00:05.282  INFO 47040 --- [restartedMain] com.qhj.BlogApplication                  : Started BlogApplication in 9.816 seconds (JVM running for 995.969)
+2021-03-31 03:00:05.290  INFO 47040 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter,org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter' securityConfig; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+      Matched:
+         - found 'session' scope (OnWebApplicationCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector; SearchStrategy: all) found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userServiceImpl and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' loginValidateAuthenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+
+   WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-03-31 03:00:05.926  INFO 74212 --- [main] com.qhj.BlogApplicationTests             : Starting BlogApplicationTests using Java 1.8.0_131 on QINHONGJIE with PID 74212 (started by �غ�� in E:\idea_workspace\Springboot_Project\blog)
+2021-03-31 03:00:05.931 DEBUG 74212 --- [main] com.qhj.BlogApplicationTests             : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-31 03:00:05.932  INFO 74212 --- [main] com.qhj.BlogApplicationTests             : The following profiles are active: dev
+2021-03-31 03:00:11.807  INFO 74212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 03:00:12.629  INFO 74212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 666 ms. Found 5 JPA repository interfaces.
+2021-03-31 03:00:18.305  INFO 74212 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 03:00:18.670  INFO 74212 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-03-31 03:00:19.591  INFO 74212 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-31 03:00:22.854  INFO 74212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-31 03:00:22.878  WARN 74212 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-31 03:00:24.164  INFO 74212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-31 03:00:24.504  INFO 74212 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-03-31 03:00:28.706  INFO 74212 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-31 03:00:28.758  INFO 74212 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 03:00:34.374  WARN 74212 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-31 03:00:41.793  INFO 74212 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6edb1e9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@24435620, org.springframework.security.web.header.HeaderWriterFilter@7323c38c, org.springframework.web.filter.CharacterEncodingFilter@75d7297d, org.springframework.security.web.authentication.logout.LogoutFilter@1b36d248, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@57920d6c, org.springframework.security.web.session.ConcurrentSessionFilter@16e4db59, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4efe014f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b895e76, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c9ef37b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e20a985, org.springframework.security.web.session.SessionManagementFilter@63a72cc6, org.springframework.security.web.access.ExceptionTranslationFilter@7831d1aa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c0a3826]
+2021-03-31 03:00:45.418  INFO 74212 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-31 03:00:46.918  INFO 74212 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-31 03:00:52.554  INFO 74212 --- [main] com.qhj.BlogApplicationTests             : Started BlogApplicationTests in 49.179 seconds (JVM running for 56.158)
+2021-03-31 03:00:53.946  INFO 74212 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-31 03:00:53.975  INFO 74212 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 03:00:54.010  INFO 74212 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-31 03:00:54.143  INFO 74212 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-31 03:06:00.666  INFO 47040 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-31 03:06:00.672  INFO 47040 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-31 03:06:00.676  INFO 47040 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-03-31 03:06:00.695  WARN 47040 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2021-03-31 12:15:47.279  INFO 73232 --- [restartedMain] com.qhj.BlogApplication                  : Starting BlogApplication using Java 1.8.0_131 on QINHONGJIE with PID 73232 (E:\idea_workspace\Springboot_Project\blog\target\classes started by 秦红杰 in E:\idea_workspace\Springboot_Project\blog)
+2021-03-31 12:15:47.338 DEBUG 73232 --- [restartedMain] com.qhj.BlogApplication                  : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-31 12:15:47.343  INFO 73232 --- [restartedMain] com.qhj.BlogApplication                  : The following profiles are active: dev
+2021-03-31 12:15:47.782  INFO 73232 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-31 12:15:47.785  INFO 73232 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-31 12:15:55.458  INFO 73232 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 12:15:56.400  INFO 73232 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 863 ms. Found 5 JPA repository interfaces.
+2021-03-31 12:16:02.837  INFO 73232 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-31 12:16:02.877  INFO 73232 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-31 12:16:02.879  INFO 73232 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-31 12:16:02.890  INFO 73232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-31 12:16:02.892  INFO 73232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-31 12:16:02.895  INFO 73232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-31 12:16:02.934  INFO 73232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-31 12:16:04.201  INFO 73232 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-31 12:16:04.203  INFO 73232 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 16408 ms
+2021-03-31 12:16:05.336  INFO 73232 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 12:16:05.615  INFO 73232 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-03-31 12:16:06.240  INFO 73232 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-31 12:16:06.759  INFO 73232 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-31 12:16:06.766  WARN 73232 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-03-31 12:16:07.509  INFO 73232 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-31 12:16:07.601  INFO 73232 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-03-31 12:16:11.255  INFO 73232 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-31 12:16:11.291  INFO 73232 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 12:16:11.786  INFO 73232 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-31 12:16:14.107  WARN 73232 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-31 12:16:16.947  INFO 73232 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32f33c83, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c232ac3, org.springframework.security.web.header.HeaderWriterFilter@159f2f3b, org.springframework.web.filter.CharacterEncodingFilter@15c101d0, org.springframework.security.web.authentication.logout.LogoutFilter@3b92ecf2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7229c674, org.springframework.security.web.session.ConcurrentSessionFilter@79ee6d8d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1833128b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e699cae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c6f1eb3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d907155, org.springframework.security.web.session.SessionManagementFilter@16dceaa3, org.springframework.security.web.access.ExceptionTranslationFilter@164f6df3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33839785]
+2021-03-31 12:16:19.707  INFO 73232 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-31 12:16:20.289  INFO 73232 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-31 12:16:22.563  INFO 73232 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-31 12:16:22.616  INFO 73232 --- [restartedMain] com.qhj.BlogApplication                  : Started BlogApplication in 39.266 seconds (JVM running for 50.817)
+2021-03-31 12:16:57.263  INFO 73232 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-31 12:16:57.267  INFO 73232 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-31 12:16:57.272  INFO 73232 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-03-31 12:16:57.411  WARN 73232 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2021-03-31 12:17:03.071  INFO 73232 --- [http-nio-8080-exec-7] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:17:03.558  WARN 73232 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-03-31 12:17:03.698  WARN 73232 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-03-31 12:17:03.773  INFO 73232 --- [http-nio-8080-exec-7] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:17:09.499  INFO 73232 --- [http-nio-8080-exec-4] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:17:09.524  INFO 73232 --- [http-nio-8080-exec-4] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:18:35.036  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:18:35.153  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:18:41.006  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:18:41.033  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:20:31.468  INFO 73232 --- [http-nio-8080-exec-10] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:20:31.580  INFO 73232 --- [http-nio-8080-exec-10] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:20:36.187  INFO 73232 --- [http-nio-8080-exec-1] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:20:36.209  INFO 73232 --- [http-nio-8080-exec-1] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:21:19.385  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:21:19.476  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:21:24.147  INFO 73232 --- [http-nio-8080-exec-3] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:21:24.170  INFO 73232 --- [http-nio-8080-exec-3] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:22:45.806  INFO 73232 --- [http-nio-8080-exec-9] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:22:45.890  INFO 73232 --- [http-nio-8080-exec-9] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:22:50.609  INFO 73232 --- [http-nio-8080-exec-10] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:22:50.630  INFO 73232 --- [http-nio-8080-exec-10] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:24:04.096  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:24:04.197  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:24:09.315  INFO 73232 --- [http-nio-8080-exec-4] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:24:09.344  INFO 73232 --- [http-nio-8080-exec-4] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:24:42.725  INFO 73232 --- [http-nio-8080-exec-9] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:24:42.814  INFO 73232 --- [http-nio-8080-exec-9] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:24:46.296  INFO 73232 --- [http-nio-8080-exec-5] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:24:46.318  INFO 73232 --- [http-nio-8080-exec-5] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:27:38.882  INFO 73232 --- [http-nio-8080-exec-13] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:27:38.974  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5eaba944 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.081  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@446f52c7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.086  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@451a3503 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.096  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6002ef9c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.102  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@71d41bc4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.107  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4f939653 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.114  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5bb5008f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.120  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2cbc6a6a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.128  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7de74e02 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.135  WARN 73232 --- [http-nio-8080-exec-13] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2e157ee3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2021-03-31 12:27:39.232  INFO 73232 --- [http-nio-8080-exec-13] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:27:42.838  INFO 73232 --- [http-nio-8080-exec-12] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:27:42.860  INFO 73232 --- [http-nio-8080-exec-12] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:28:36.282  INFO 73232 --- [http-nio-8080-exec-1] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/tags/49', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.TagShowController.tagsByIdPage', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 49, {}]}
+2021-03-31 12:28:36.479  INFO 73232 --- [http-nio-8080-exec-1] com.qhj.aspect.LogAspect                 : Result : tags
+2021-03-31 12:28:40.025  INFO 73232 --- [http-nio-8080-exec-3] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:28:40.046  INFO 73232 --- [http-nio-8080-exec-3] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:28:43.539  INFO 73232 --- [http-nio-8080-exec-4] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/index', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:28:43.627  INFO 73232 --- [http-nio-8080-exec-4] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:28:46.077  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:28:46.099  INFO 73232 --- [http-nio-8080-exec-6] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2021-03-31 12:30:03.719  INFO 73232 --- [http-nio-8080-exec-9] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/index', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-03-31 12:30:03.790  INFO 73232 --- [http-nio-8080-exec-9] com.qhj.aspect.LogAspect                 : Result : index
+2021-03-31 12:30:08.777  INFO 73232 --- [http-nio-8080-exec-12] com.qhj.aspect.LogAspect                 : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.qhj.web.IndexController.newBlogs', args=[{}]}
+2021-03-31 12:30:08.801  INFO 73232 --- [http-nio-8080-exec-12] com.qhj.aspect.LogAspect                 : Result : _fragments :: newBlogList
