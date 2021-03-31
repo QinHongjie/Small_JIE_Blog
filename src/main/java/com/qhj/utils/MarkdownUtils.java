@@ -58,11 +58,16 @@ public class MarkdownUtils {
         return renderer.render(document);
     }
 
-
+    /**
+     * 为标签添加class及基本属性
+     */
     private static class CustomAttributeProvider implements AttributeProvider {
         @Override
         public void setAttributes(Node node, String tagName, Map<String, String> attributes) {
             // 改变a标签的target属性为_blank
+            if (tagName.equals("a")) {
+                attributes.put("target", "_blank");
+            }
             if (node instanceof Image) {
                 attributes.put("target", "_blank");
             }
@@ -71,10 +76,5 @@ public class MarkdownUtils {
             }
         }
     }
-
-//    public static void main(String[] args) {
-//        System.out.println(markdownToHtml("### 测试"));
-//
-//    }
 
 }

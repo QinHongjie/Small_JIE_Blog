@@ -169,7 +169,7 @@
 						<div id="tagsYun" class="ui teal segment">
 							<a th:href="@{/tags/{id}(id=${tag.id})}" class="ui teal tag label m-margin-tb-tiny" th:each="tag : ${tags}">
 								<span th:text="${tag.name}" style="margin-left:0.6em;">方法论</span>
-								<div class="detail" th:text="${#arrays.length(tag.blogs)}" style="margin-left: 0.2em;">14</div>
+								<div class="detail" th:text="${#arrays.length(tag.blogs)}" style="margin-left: 0;">14</div>
 							</a>
 						</div>
 					</div>

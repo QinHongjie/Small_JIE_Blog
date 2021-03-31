@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="_fragments :: head('博客 | 404')"></head>
+<head>
+	<!-- css -->
+	<th:block th:insert="_fragments :: head"></th:block>
+	<title th:text="|#{blog.name} - 404|"></title>
+</head>
 <body>
 	<!--导航-->
 	<nav th:replace="_fragments :: user_nav(0)"></nav>

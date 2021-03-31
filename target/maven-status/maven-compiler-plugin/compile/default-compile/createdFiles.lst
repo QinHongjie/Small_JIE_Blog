@@ -14,6 +14,8 @@ com\qhj\service\impl\BlogServiceImpl.class
 com\qhj\web\TypeShowController.class
 com\qhj\core\LoginValidateAuthenticationProvider.class
 com\qhj\web\admin\BlogController.class
+com\qhj\config\WebConfig.class
+com\qhj\config\SwaggerConfig.class
 com\qhj\core\handler\LoginSuccessHandler.class
 com\qhj\web\TagShowController.class
 com\qhj\utils\code\ResultCode.class
@@ -25,7 +27,6 @@ com\qhj\service\impl\TypeServiceImpl.class
 com\qhj\pojo\Comment.class
 com\qhj\web\IndexController.class
 com\qhj\service\CommentService.class
-com\qhj\interceptor\WebConfig.class
 com\qhj\utils\code\Result$ResultBuilder.class
 com\qhj\web\admin\TagController.class
 com\qhj\utils\code\Result.class

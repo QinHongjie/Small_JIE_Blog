@@ -3,12 +3,14 @@ package com.qhj.api;
 import com.alibaba.fastjson.JSON;
 import com.qhj.pojo.User;
 import com.qhj.utils.code.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,10 +20,12 @@ import java.util.Map;
 /**
  * Created by QHJ on 2021/3/29
  */
-@Controller
+@RestController
 @RequestMapping("/api")
+@Api(value = "用户模块")
 public class UserApi {
 
+    @ApiOperation(value = "获取当前登录用户信息", notes = "返回用户所有信息")
     @GetMapping("/getUserBySession")
     @ResponseBody
     public Result getUserBySession(){
@@ -35,10 +39,6 @@ public class UserApi {
         }
         return null;
     }
-
-
-
-
 
 
 
