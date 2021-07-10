@@ -13,7 +13,9 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.annotation.Resource;
 
-// 安全配置类
+/**
+ * 安全认证配置类
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {

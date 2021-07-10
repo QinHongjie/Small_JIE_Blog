@@ -79,7 +79,7 @@
 				<div class="required field">
 					<div class="ui left labeled input">
 						<label class="ui teal basic label">首图</label>
-						<input type="text" name="firstPicture" placeholder="首图引用地址" th:value="*{firstPicture}"/>
+						<input type="text" name="firstPicture" placeholder="首图引用地址" th:value="${blog.firstPicture}"/>
 						<label id="portrait-btn" class="ui label">默认</label>
 					</div>
 				</div>
@@ -99,13 +99,13 @@
 					</div>
 					<div class="field">
 						<div class="ui checkbox">
-							<input name="appreciation" id="appreciation" type="checkbox" class="hidden" checked th:checked="*{appreciation}" />
+							<input name="appreciation" id="appreciation" type="checkbox" class="hidden" th:checked="*{appreciation}" />
 							<label for="appreciation">赞赏</label>
 						</div>
 					</div>
 					<div class="field">
 						<div class="ui checkbox">
-							<input name="commentabled" id="commentabled" type="checkbox" class="hidden" checked th:checked="*{commentabled}" />
+							<input name="commentabled" id="commentabled" type="checkbox" class="hidden" th:checked="*{commentabled}" />
 							<label for="commentabled">评论</label>
 						</div>
 					</div>
@@ -122,8 +122,6 @@
 		</div>
 	</div>
 
-	<!-- 底部footer -->
-	<footer th:replace="_fragments :: footer"></footer>
 	<!-- script -->
 	<th:block th:replace="admin/_fragments :: script"></th:block>
 </body>
@@ -197,7 +195,6 @@
 	$("#portrait-btn").click(function () {
 		$("input[name='firstPicture']").val("https://unsplash.it/800/450?image=1022");
 	})
-
 
 
 

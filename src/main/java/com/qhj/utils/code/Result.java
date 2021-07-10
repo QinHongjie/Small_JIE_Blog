@@ -1,7 +1,7 @@
 package com.qhj.utils.code;
 
 /**
- * Created by QHJ on 2021/3/29
+ * 封装返回参数
  */
 public class Result {
 

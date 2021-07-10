@@ -12,6 +12,11 @@ import java.io.UnsupportedEncodingException;
 @Component
 public class MyPasswordEncoder implements PasswordEncoder {
 
+    /**
+     * md5加密方法
+     * @param charSequence
+     * @return
+     */
     @Override
     public String encode(CharSequence charSequence) {
         try {
@@ -23,6 +28,12 @@ public class MyPasswordEncoder implements PasswordEncoder {
         }
     }
 
+    /**
+     * 加密比对
+     * @param charSequence
+     * @param s
+     * @return
+     */
     @Override
     public boolean matches(CharSequence charSequence, String s) {
         return encode(charSequence).equals(s);

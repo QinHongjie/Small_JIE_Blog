@@ -1,7 +1,7 @@
 package com.qhj.utils.code;
 
 /**
- * Created by QHJ on 2021/3/29
+ * 返回code
  */
 public interface ResultCode {
 

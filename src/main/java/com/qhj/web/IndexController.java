@@ -44,7 +44,7 @@ public class IndexController {
         model.addAttribute("page", pageBlogs);
         model.addAttribute("types",typeService.listTypeTop(6));
         model.addAttribute("typesCount", typeService.listType().size());
-        model.addAttribute("tags",tagService.listTagTop(12));
+        model.addAttribute("tags",tagService.listTagTop(16));
         model.addAttribute("tagsCount", tagService.listTag().size());
         model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
         model.addAttribute("admin_user", userService.getAdminUser());
