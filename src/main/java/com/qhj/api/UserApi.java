@@ -20,9 +20,9 @@ import java.util.Map;
 /**
  * Created by QHJ on 2021/3/29
  */
+@Api(value = "用户相关",tags = {"用户相关"})
 @RestController
 @RequestMapping("/api")
-@Api(value = "用户模块")
 public class UserApi {
 
     @ApiOperation(value = "获取当前登录用户信息", notes = "返回用户所有信息")

@@ -1,0 +1,11 @@
+server:
+  port: 3001
+  servlet:
+    context-path: ""
+
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev
+

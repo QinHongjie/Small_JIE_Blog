@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.qhj.BlogApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.184 s - in com.qhj.BlogApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 35.285 s - in com.qhj.BlogApplicationTests

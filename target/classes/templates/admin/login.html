@@ -4,47 +4,58 @@
 	<!-- css -->
 	<th:block th:insert="_fragments :: head"></th:block>
 	<title>博客管理 | 登录</title>
+	<style>
+		/* 页面内容绝对定位 为了给背景特效预留空间 */
+		#main{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
 
-	<div class="m-container-small m-padded-tb-massive" style="max-width: 30em !important;position: relative;top: 100px;">
-		<div class="ur container">
-			<div class="ui middle aligned center aligned grid">
-			  	<div class="column">
+	<div id="main">
+		<div class="m-container-small m-padded-tb-massive" style="max-width: 30em !important;position: relative;top: 100px;">
+			<div class="ui container">
+				<div class="ui middle aligned center aligned grid">
+					<div class="column">
 
-					<form class="ui large form" method="post">
-						<div class="ui stacked segment m-padded-tb-large">
-							<h2 class="ui teal image header">
-								<div class="content">
-									管理后台登录
+							<form class="ui large form" method="post">
+								<div class="ui teal stacked segment m-padded-tb-large">
+									<h2 class="ui teal image header">
+										<div class="content">
+											管理后台登录
+										</div>
+									</h2>
+									<div class="field">
+										<div class="ui left icon input">
+											<i class="user icon"></i>
+											<input type="text" name="username" placeholder="用户名">
+										</div>
+									</div>
+									<div class="field">
+										<div class="ui left icon input">
+											<i class="lock icon"></i>
+											<input type="password" name="password" placeholder="密码">
+										</div>
+									</div>
+									<div id="loginBtn" class="ui fluid large teal button">登 录</div>
 								</div>
-							</h2>
-							<div class="field">
-								<div class="ui left icon input">
-									<i class="user icon"></i>
-									<input type="text" name="username" placeholder="用户名">
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui left icon input">
-									<i class="lock icon"></i>
-									<input type="password" name="password" placeholder="密码">
-								</div>
-							</div>
-							<div id="loginBtn" class="ui fluid large teal button">登 录</div>
-						</div>
 
-						<div class="ui error message"></div>
-						<div class="ui mini message negative" style="display:none;"></div>
-					</form>
+								<div class="ui error message"></div>
+								<div class="ui mini message negative" style="display:none;"></div>
+							</form>
 
-			  </div>
+				  </div>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- script -->
 	<th:block th:replace="_fragments :: script"></th:block>
+	<script th:src="@{/js/three.min.js}"></script><!-- 粒子背景特效 -->
 </body>
 <script>
 
@@ -103,5 +114,95 @@
 	// 		},
 	// 	}
 	// });
+
+	/*	-	-	-	-	-	特效背景区	-	-	-	-	-	*/
+	var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+	var container;
+	var camera, scene, renderer;
+	var particles, particle, count = 0;
+	var mouseX = 0, mouseY = -350;
+	var windowHalfX = window.innerWidth / 2;
+	var windowHalfY = window.innerHeight / 2;
+	init();
+	animate();
+	function init() {
+		container = document.createElement( 'div' );
+		document.body.appendChild( container );
+		camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+		camera.position.z = 1000;
+		scene = new THREE.Scene();
+		particles = new Array();
+		var PI2 = Math.PI * 2;
+		var material = new THREE.ParticleCanvasMaterial( {
+			color: 0xc4c4c4,
+			program: function ( context ) {
+				context.beginPath();
+				context.arc( 0, 0, 1, 0, PI2, true );
+				context.fill();
+			}
+		});
+		var i = 0;
+		for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+			for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+				particle = particles[ i ++ ] = new THREE.Particle( material );
+				particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+				particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+				scene.add( particle );
+			}
+		}
+		renderer = new THREE.CanvasRenderer();
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		container.appendChild( renderer.domElement );
+		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+		document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+		window.addEventListener( 'resize', onWindowResize, false );
+	}
+	function onWindowResize() {
+		windowHalfX = window.innerWidth / 2;
+		windowHalfY = window.innerHeight / 2;
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();
+		renderer.setSize( window.innerWidth, window.innerHeight );
+	}
+	//
+	function onDocumentMouseMove( event ) {
+		mouseX = event.clientX - windowHalfX;
+		mouseY = event.clientY - windowHalfY;
+	}
+	function onDocumentTouchStart( event ) {
+		if ( event.touches.length === 1 ) {
+			event.preventDefault();
+			mouseX = event.touches[ 0 ].pageX - windowHalfX;
+			mouseY = event.touches[ 0 ].pageY - windowHalfY;
+		}
+	}
+	function onDocumentTouchMove( event ) {
+		if ( event.touches.length === 1 ) {
+			event.preventDefault();
+			mouseX = event.touches[ 0 ].pageX - windowHalfX;
+			mouseY = event.touches[ 0 ].pageY - windowHalfY;
+		}
+	}
+	//
+	function animate() {
+		requestAnimationFrame( animate );
+		render();
+	}
+	function render() {
+		camera.position.x += ( mouseX - camera.position.x ) * .05;
+		camera.position.y += ( - mouseY - camera.position.y ) * .05;
+		camera.lookAt( scene.position );
+		var i = 0;
+		for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+			for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+				particle = particles[ i++ ];
+				particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+				particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+			}
+		}
+		renderer.render( scene, camera );
+		count += 0.1;
+	}
 </script>
 </html>

@@ -1,7 +1,11 @@
 # Small_JIE_Blog
 杰杰の个人博客管理系统
 
-涉及技术：semanticUI、Springboot、SpringSecurity、JPA、MySQL、markdown、Ajax、thymeleaf、Swagger
+涉及技术：semanticUI、Springboot、SpringSecurity、JPA、MySQL、markdown、Ajax、thymeleaf
+
+编辑器：IDEA
+
+数据库文件：/sql/blog.sql
 
 主要功能实现：
 前端： 
